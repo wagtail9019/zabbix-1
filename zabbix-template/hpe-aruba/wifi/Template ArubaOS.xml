@@ -1667,7 +1667,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.8.1.1.1.11.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.authFailedAuths.[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aos.authFailedAuths.[{#SNMPVALUE},{# SNMPINDEX}]</key>
                             <delay>1m</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -1709,7 +1709,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.8.1.1.1.8.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.authInService.[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aos.authInService.[{#SNMPVALUE},{# SNMPINDEX}]</key>
                             <delay>1m</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -1753,7 +1753,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.8.1.1.1.13.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.authResponseTime.[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aos.authResponseTime.[{#SNMPVALUE},{# SNMPINDEX}]</key>
                             <delay>5m</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -1795,7 +1795,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.8.1.1.1.7.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.authServerState.[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aos.authServerState.[{#SNMPVALUE},{# SNMPINDEX}]</key>
                             <delay>10m</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -1839,7 +1839,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>1.3.6.1.4.1.14823.2.2.1.8.1.1.1.2.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.authServerType.[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aos.authServerType.[{#SNMPVALUE},{# SNMPINDEX}]</key>
                             <delay>1d</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -1883,7 +1883,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.8.1.1.1.14.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.authSrvOutstandReq.[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aos.authSrvOutstandReq.[{#SNMPVALUE},{# SNMPINDEX}]</key>
                             <delay>1m</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -1925,7 +1925,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.8.1.1.1.12.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.authSrvTimeouts.[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aos.authSrvTimeouts.[{#SNMPVALUE},{# SNMPINDEX}]</key>
                             <delay>1m</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -1967,7 +1967,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.8.1.1.1.15.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.authSrvUptime.[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aos.authSrvUptime.[{#SNMPVALUE},{# SNMPINDEX}]</key>
                             <delay>5m</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -2009,7 +2009,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.8.1.1.1.10.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.authSuccessAuths.[{#SNMPVALUE}][{#SNMPINDEX}]</key>
+                            <key>aos.authSuccessAuths.[{#SNMPVALUE},{# SNMPINDEX}]</key>
                             <delay>5m</delay>
                             <history>90d</history>
                             <trends>365d</trends>
@@ -2054,7 +2054,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template ArubaOS:aos.authInService.[{#SNMPVALUE}][{#SNMPINDEX}].last()}=2</expression>
+                            <expression>{Template ArubaOS:aos.authInService.[{#SNMPVALUE},{# SNMPINDEX}].last()}=2</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Auth Server {#SNMPVALUE} out of service on {HOST.NAME}</name>
@@ -2070,7 +2070,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template ArubaOS:aos.authFailedAuths.[{#SNMPVALUE}][{#SNMPINDEX}].change()}&gt;20</expression>
+                            <expression>{Template ArubaOS:aos.authFailedAuths.[{#SNMPVALUE},{# SNMPINDEX}].change()}&gt;20</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>High Failed Auths {#SNMPVALUE} on {HOST.NAME}</name>
@@ -2086,7 +2086,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template ArubaOS:aos.authSrvOutstandReq.[{#SNMPVALUE}][{#SNMPINDEX}].change()}&gt;20</expression>
+                            <expression>{Template ArubaOS:aos.authSrvOutstandReq.[{#SNMPVALUE},{# SNMPINDEX}].change()}&gt;20</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>High Outstanding Requests {#SNMPVALUE} on {HOST.NAME}</name>
@@ -2102,7 +2102,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template ArubaOS:aos.authSrvTimeouts.[{#SNMPVALUE}][{#SNMPINDEX}].change()}&gt;10</expression>
+                            <expression>{Template ArubaOS:aos.authSrvTimeouts.[{#SNMPVALUE},{# SNMPINDEX}].change()}&gt;10</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Server {#SNMPVALUE} Timeouts on {HOST.NAME}</name>
@@ -2118,7 +2118,7 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template ArubaOS:aos.authSrvUptime.[{#SNMPVALUE}][{#SNMPINDEX}].last()}&lt;600</expression>
+                            <expression>{Template ArubaOS:aos.authSrvUptime.[{#SNMPVALUE},{# SNMPINDEX}].last()}&lt;600</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Server {#SNMPVALUE} Uptime Changed on {HOST.NAME}</name>
@@ -2399,7 +2399,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.2.1.20.1.2.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.lic.[{#SNMPINDEX}][{#SNMPVALUE}]</key>
+                            <key>aos.lic.[{#SNMPVALUE},{# SNMPVALUE}]</key>
                             <delay>1d</delay>
                             <history>90d</history>
                             <trends>0</trends>
@@ -2441,7 +2441,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.2.1.20.1.4.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.licExpire.[{#SNMPINDEX}][{#SNMPVALUE}]</key>
+                            <key>aos.licExpire.[{#SNMPINDEX},{# SNMPVALUE}]</key>
                             <delay>1d</delay>
                             <history>90d</history>
                             <trends>0</trends>
@@ -2483,7 +2483,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.2.1.20.1.5.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.licFlags.[{#SNMPINDEX}][{#SNMPVALUE}]</key>
+                            <key>aos.licFlags.[{#SNMPINDEX},{# SNMPVALUE}]</key>
                             <delay>1d</delay>
                             <history>90d</history>
                             <trends>0</trends>
@@ -2525,7 +2525,7 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <snmp_oid>.1.3.6.1.4.1.14823.2.2.1.2.1.20.1.3.{#SNMPINDEX}</snmp_oid>
-                            <key>aos.licsInstalled.[{#SNMPINDEX}][{#SNMPVALUE}]</key>
+                            <key>aos.licsInstalled.[{#SNMPINDEX},{# SNMPVALUE}]</key>
                             <delay>1d</delay>
                             <history>90d</history>
                             <trends>0</trends>
